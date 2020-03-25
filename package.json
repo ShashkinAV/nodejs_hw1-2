@@ -1,0 +1,25 @@
+{
+  "name": "nodejs_hw1",
+  "version": "1.0.0",
+  "description": "sort file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fix-js": "eslint-auto-fix"
+  },
+  "author": "t0xa",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-auto-fix": "^1.0.1",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "standard": "^14.3.1"
+  },
+  "dependencies": {
+    "commander": "^5.0.0",
+    "del": "^5.1.0"
+  }
+}
