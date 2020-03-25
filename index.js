@@ -1,27 +1,27 @@
-const fs = require('fs');
-const Watcher = require('./watcher');
-const program = require('./utils/commander');
-program.parse(process.argv);
-const del = require('del');
-const errorHandler = require('./helper/error');
+const http = require('http');
+const port = 3000;
+const interval = process.argv[2] || 1000;
+const clear = process.argv[3] || 5000;
 
-const watcher = new Watcher(() => {
-  console.log('Sorting completed');
-  if (program.delete) {
-    del(program.folder).then(() => {
-      console.log('Delete folder');
-    });
-  }
+const server = http.createServer((req, res) => {
+    if (req.method === 'GET') {
+      let date;
+      let int = setInterval(() => {
+        date = new Date();
+        console.log(date.toUTCString());
+      }, interval);
+      
+      setTimeout(() => {
+        clearInterval(int);
+        res.write(`Time stop: ${date.toUTCString()} 
+                  Date: ${date.getFullYear()}-${date.getUTCMonth()+1}-${date.getUTCDate()}
+                  Time: ${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}
+                  `);
+        res.end();
+      }, clear);  
+    } else {
+        res.end('No Get');
+    }   
 });
 
-const copyFolder = require('./utils/copy')(program.output, watcher);
-
-if (!fs.existsSync(program.folder)) {
-  errorHandler(`Folder: ${program.folder} not found`);
-} else {
-  if (!fs.existsSync(program.output)) {
-    fs.mkdirSync(program.output);
-  }
-  copyFolder(program.folder);
-  watcher.started();
-}
+server.listen(port, () => console.log(`Srver running on port: ${port}`));
