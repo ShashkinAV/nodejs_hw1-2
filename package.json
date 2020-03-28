@@ -1,0 +1,23 @@
+{
+  "name": "nodejs_hw1-2",
+  "version": "1.0.0",
+  "description": "Homework - 1: Сортировка файлов по папкам\r Homework - 2: Реализация http-сервера",
+  "main": "index.js",
+  "dependencies": {
+    "commander": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShashkinAV/nodejs_hw1-2.git"
+  },
+  "author": "t0xa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShashkinAV/nodejs_hw1-2/issues"
+  },
+  "homepage": "https://github.com/ShashkinAV/nodejs_hw1-2#readme"
+}
