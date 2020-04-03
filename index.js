@@ -1,7 +1,8 @@
 const http = require('http');
-const port = 3000;
-const interval = process.argv[2] || 1000;
-const clear = process.argv[3] || 5000;
+require('dotenv').config();
+const port = process.env.PORT;
+const interval = process.env.INTERVAL;
+const clear = process.env.CLEAR;
 
 const server = http.createServer((req, res) => {
     if (req.method === 'GET') {

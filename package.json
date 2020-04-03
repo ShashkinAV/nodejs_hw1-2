@@ -4,7 +4,8 @@
   "description": "Homework - 1: Сортировка файлов по папкам\r Homework - 2: Реализация http-сервера",
   "main": "index.js",
   "dependencies": {
-    "commander": "^5.0.0"
+    "commander": "^5.0.0",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {},
   "scripts": {
